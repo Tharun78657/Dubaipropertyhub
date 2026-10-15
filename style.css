@@ -1348,10 +1348,10 @@ img {
 }
 
 .prop-inquire-btn:hover {
-  background: #25D366;
-  border-color: #25D366;
+  background: var(--red);
+  border-color: var(--red);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+  box-shadow: 0 4px 14px rgba(232, 19, 26, 0.28);
   transform: translateY(-2px);
 }
 
@@ -2708,6 +2708,13 @@ img {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
 }
 
+.contact-address {
+  width: 100%;
+  max-width: 430px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
 .contact-direct-row svg {
   color: var(--red);
   flex-shrink: 0;
@@ -2730,6 +2737,70 @@ img {
 
 .contact-direct-row:hover span {
   color: var(--red);
+}
+
+.floating-contact-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.call-float {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.call-float img,
+.whatsapp-float img {
+  display: block;
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.call-float-number {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #111827;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.call-float:hover img,
+.whatsapp-float:hover img {
+  transform: scale(1.08);
+}
+
+.whatsapp-float {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3);
+}
+
+.call-float:focus-visible,
+.whatsapp-float:focus-visible {
+  outline: 3px solid #111827;
+  outline-offset: 4px;
 }
 
 /* ── Right Column: Form Card (Compact White Theme) ── */
@@ -3028,6 +3099,18 @@ img {
 
   .contact-heading {
     font-size: 1.45rem;
+  }
+
+  .floating-contact-actions {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .call-float img,
+  .whatsapp-float,
+  .whatsapp-float img {
+    width: 54px;
+    height: 54px;
   }
 
   .contact-form-title {

@@ -71,9 +71,4 @@ if (advisorDialog && advisorForm) {
     if (event.target === advisorDialog) advisorDialog.close();
   });
 
-  advisorForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    advisorForm.querySelector('.advisor-form-status').textContent =
-      'This form is not connected to a submission service yet. Please email info@dubaipropertyhub.in to send your enquiry.';
-  });
 }

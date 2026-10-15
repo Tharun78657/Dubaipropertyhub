@@ -500,38 +500,3 @@ if (document.readyState === 'loading') {
   initWayOfWorkHorizontalJourney();
 }
 
-
-/* ===== CONTACT FORM HANDLER ===== */
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const btn = document.getElementById('contact-submit-btn');
-    const originalHTML = btn.innerHTML;
-
-    // Show sending state
-    btn.innerHTML = `<span>Sending...</span>`;
-    btn.disabled = true;
-    btn.style.opacity = '0.7';
-
-    // Simulate submission (replace with actual API call)
-    setTimeout(() => {
-      btn.innerHTML = `
-        <span>Enquiry Sent ✓</span>
-      `;
-      btn.style.background = 'linear-gradient(135deg, #1DB954 0%, #148F3E 100%)';
-      btn.style.boxShadow = '0 4px 20px rgba(29, 185, 84, 0.35)';
-
-      // Reset form after 2.5 seconds
-      setTimeout(() => {
-        contactForm.reset();
-        btn.innerHTML = originalHTML;
-        btn.disabled = false;
-        btn.style.opacity = '';
-        btn.style.background = '';
-        btn.style.boxShadow = '';
-      }, 2500);
-    }, 1200);
-  });
-}
